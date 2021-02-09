@@ -1,6 +1,7 @@
 package com.healthyMoves.healthyMoves.entity;
 
 import com.healthyMoves.healthyMoves.entity.audit.AuditModel;
+import com.healthyMoves.healthyMoves.enums.BodyType;
 import com.healthyMoves.healthyMoves.enums.ExerciseLevel;
 import lombok.AccessLevel;
 import lombok.Getter;
