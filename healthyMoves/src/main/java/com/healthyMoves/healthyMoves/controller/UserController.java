@@ -2,6 +2,7 @@ package com.healthyMoves.healthyMoves.controller;
 
 import com.healthyMoves.healthyMoves.command.UserCO;
 import com.healthyMoves.healthyMoves.constant.ApplicationConstant;
+import com.healthyMoves.healthyMoves.dto.ResponseDTO;
 import com.healthyMoves.healthyMoves.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<String> saveUser(@Valid @RequestBody UserCO userCO) {
+    public ResponseEntity<ResponseDTO<String>> saveUser(@Valid @RequestBody UserCO userCO) {
         log.info("Request received for saving user with mail {}", userCO.getEmail());
-        userService.save(userCO);
-        return ResponseEntity.ok(messageSource.getMessage("resource.created", new String[]{"user"},
-                                                          LocaleContextHolder.getLocale()));
+        String token = userService.save(userCO);
+        ResponseDTO<String> responseDTO = new ResponseDTO<>(true, messageSource
+                .getMessage("resource.created", new String[]{"user"},
+                            LocaleContextHolder.getLocale()), token);
+        return ResponseEntity.ok(responseDTO);
     }
 
 }

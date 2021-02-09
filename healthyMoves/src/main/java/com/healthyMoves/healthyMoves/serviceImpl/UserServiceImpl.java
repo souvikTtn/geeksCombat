@@ -15,12 +15,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public void save(UserCO userCO) {
+    public String save(UserCO userCO) {
         String token = UUID.randomUUID().toString();
         User user = new User();
         user.setEmail(userCO.getEmail());
         user.setSocialId(userCO.getSocialId());
         user.setToken(token);
-        userRepository.save(user);
+        return userRepository.save(user).getToken();
+
     }
 }
