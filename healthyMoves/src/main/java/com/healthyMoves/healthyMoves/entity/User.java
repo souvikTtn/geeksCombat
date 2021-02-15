@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -13,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User extends AuditModel<String> {
+    @Indexed(unique = true)
     String email;
     String socialId;
     AuthProvider provider;

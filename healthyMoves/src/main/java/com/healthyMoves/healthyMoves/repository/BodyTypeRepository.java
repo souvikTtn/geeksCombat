@@ -1,13 +1,10 @@
 package com.healthyMoves.healthyMoves.repository;
 
-import com.healthyMoves.healthyMoves.entity.User;
+import com.healthyMoves.healthyMoves.entity.BodyType;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import java.util.Optional;
-
-public interface UserRepository extends MongoRepository<User, String> {
-    Optional<User> findByToken(String token);
+public interface BodyTypeRepository extends MongoRepository<BodyType, String> {
 
     @Query(value = "{deleted:false , active : true}", count = true)
     long count();

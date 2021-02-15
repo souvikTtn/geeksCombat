@@ -12,5 +12,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BodyType extends AuditModel<String> {
     String image;
     String description;
-    BodyType type;
+    com.healthyMoves.healthyMoves.enums.BodyType type;
 }

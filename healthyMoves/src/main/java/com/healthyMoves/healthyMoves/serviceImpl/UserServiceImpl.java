@@ -31,8 +31,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String save(User user) {
+        String token = UUID.randomUUID().toString();
+        user.setToken(token);
+        return userRepository.save(user).getToken();
+    }
+
+    @Override
     public User findByToken(String token) {
         return userRepository.findByToken(token).orElseThrow(() -> new RuntimeException(messageSource.getMessage(
                 "resource.not.found", new String[]{"user"}, LocaleContextHolder.getLocale())));
+    }
+
+    @Override
+    public long count() {
+        return userRepository.count();
     }
 }
