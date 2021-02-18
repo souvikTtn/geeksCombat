@@ -1,7 +1,9 @@
 package com.healthyMoves.healthyMoves.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.healthyMoves.healthyMoves.entity.audit.AuditModel;
 import com.healthyMoves.healthyMoves.enums.AuthProvider;
+import com.healthyMoves.healthyMoves.enums.ExerciseLevel;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +18,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User extends AuditModel<String> {
     @Indexed(unique = true)
     String email;
+    @JsonIgnore
     String socialId;
     AuthProvider provider;
     String token;
@@ -23,4 +26,5 @@ public class User extends AuditModel<String> {
     Long weight;
     //in cms
     Long height;
+    ExerciseLevel level;
 }

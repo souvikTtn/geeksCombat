@@ -20,13 +20,13 @@ public class UserServiceImpl implements UserService {
     private MessageSource messageSource;
 
     @Override
-    public String save(UserCO userCO) {
+    public User save(UserCO userCO) {
         String token = UUID.randomUUID().toString();
         User user = new User();
         user.setEmail(userCO.getEmail());
         user.setSocialId(userCO.getSocialId());
         user.setToken(token);
-        return userRepository.save(user).getToken();
+        return userRepository.save(user);
 
     }
 
@@ -46,5 +46,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public long count() {
         return userRepository.count();
+    }
+
+    @Override
+    public void updateUser(UserCO userCO, String token) {
+        User user = userRepository.findByToken(token)
+                                  .orElseThrow(() -> new RuntimeException(messageSource.getMessage(
+                                          "resource.not.found", new String[]{"user"},
+                                          LocaleContextHolder.getLocale())));
+        user.setWeight(userCO.getWeight());
+        user.setHeight(userCO.getHeight());
+        user.setLevel(userCO.getLevel());
+        userRepository.save(user);
     }
 }

@@ -1,6 +1,7 @@
 package com.healthyMoves.healthyMoves.command;
 
 import com.healthyMoves.healthyMoves.enums.AuthProvider;
+import com.healthyMoves.healthyMoves.enums.ExerciseLevel;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -14,4 +15,7 @@ public class UserCO {
     String email;
     String socialId;
     AuthProvider provider;
+    Long weight;
+    Long height;
+    ExerciseLevel level;
 }
