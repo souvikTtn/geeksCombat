@@ -2,6 +2,7 @@ package com.healthyMoves.healthyMoves.entity;
 
 import com.healthyMoves.healthyMoves.entity.audit.AuditModel;
 import com.healthyMoves.healthyMoves.enums.BodyType;
+import com.healthyMoves.healthyMoves.enums.ExerciseCategory;
 import com.healthyMoves.healthyMoves.enums.ExerciseLevel;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -17,10 +18,11 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Exercise extends AuditModel<String> {
     String name;
-    ExerciseLevel level;
+    List<ExerciseLevel> level;
     Long caloriesBurn;
     TimePeriod period;
     List<BodyType> bodyTypes;
     String videoUrl;
     List<Coordinate> coordinates;
+    List<ExerciseCategory> categories;
 }
