@@ -23,8 +23,8 @@ public class User extends AuditModel<String> {
     AuthProvider provider;
     String token;
     //in kgs
-    Long weight;
+    Double weight;
     //in cms
-    Long height;
+    Double height;
     ExerciseLevel level;
 }

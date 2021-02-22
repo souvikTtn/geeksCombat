@@ -3,6 +3,8 @@ package com.healthyMoves.healthyMoves.service;
 import com.healthyMoves.healthyMoves.command.UserCO;
 import com.healthyMoves.healthyMoves.entity.User;
 
+import java.util.Map;
+
 public interface UserService {
     User save(UserCO userCO);
 
@@ -12,5 +14,7 @@ public interface UserService {
 
     long count();
 
-    public void updateUser(UserCO userCO, String token);
+    void updateUser(UserCO userCO, String token);
+
+    Map<String,Object> getUserInfo(String token);
 }

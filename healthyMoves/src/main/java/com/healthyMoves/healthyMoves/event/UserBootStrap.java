@@ -24,8 +24,8 @@ public class UserBootStrap {
             User user = new User();
             user.setEmail("souvikc40@gmail.com");
             user.setSocialId("souvikdgreat");
-            user.setHeight(168L);
-            user.setWeight(65L);
+            user.setHeight(168D);
+            user.setWeight(65D);
             user.setProvider(AuthProvider.GOOGLE);
             log.info("==>USER TOKEN {}", userService.save(user));
             log.info("=>Setting up User successfull");

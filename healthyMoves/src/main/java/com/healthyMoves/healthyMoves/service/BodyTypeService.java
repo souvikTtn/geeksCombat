@@ -8,4 +8,5 @@ public interface BodyTypeService {
     void save(BodyType bodyType);
     List<BodyType> getAllBodyTypes();
     long count();
+    BodyType findByType(com.healthyMoves.healthyMoves.enums.BodyType type);
 }

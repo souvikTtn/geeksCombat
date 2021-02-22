@@ -8,4 +8,6 @@ public interface BodyTypeRepository extends MongoRepository<BodyType, String> {
 
     @Query(value = "{deleted:false , active : true}", count = true)
     long count();
+
+    BodyType findByType(com.healthyMoves.healthyMoves.enums.BodyType type);
 }

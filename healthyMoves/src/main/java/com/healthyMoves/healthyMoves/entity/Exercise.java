@@ -25,4 +25,5 @@ public class Exercise extends AuditModel<String> {
     String videoUrl;
     List<Coordinate> coordinates;
     List<ExerciseCategory> categories;
+    String logoUrl;
 }

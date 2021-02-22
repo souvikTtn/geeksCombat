@@ -15,7 +15,7 @@ public class UserCO {
     String email;
     String socialId;
     AuthProvider provider;
-    Long weight;
-    Long height;
+    Double weight;
+    Double height;
     ExerciseLevel level;
 }

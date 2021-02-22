@@ -27,4 +27,9 @@ public class BodyTypeServiceImpl implements BodyTypeService {
     public long count() {
         return bodyTypeRepository.count();
     }
+
+    @Override
+    public BodyType findByType(com.healthyMoves.healthyMoves.enums.BodyType type) {
+        return bodyTypeRepository.findByType(type);
+    }
 }

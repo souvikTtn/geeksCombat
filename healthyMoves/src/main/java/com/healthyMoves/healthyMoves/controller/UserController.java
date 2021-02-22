@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 @RestController
 @Slf4j
@@ -45,6 +47,12 @@ public class UserController {
         log.info("Request received fro updating user");
         userService.updateUser(userCO, token);
         return new ResponseDTO(true, "User updated successfull", null);
+    }
+
+    @GetMapping("/info")
+    public ResponseDTO<Map<String, Object>> getUserInfo(@RequestHeader("token") String token) {
+        log.info("Request received for getting  user info");
+        return new ResponseDTO<>(true, "User Info fetched Successfull", userService.getUserInfo(token));
     }
 
 }
