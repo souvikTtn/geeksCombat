@@ -1,9 +1,9 @@
 package com.healthyMoves.healthyMoves.service;
 
-import com.healthyMoves.healthyMoves.enums.ExerciseCategory;
+import com.healthyMoves.healthyMoves.dto.ScheduleDTO;
 
-import java.util.Map;
+import java.util.List;
 
 public interface ScheduleService {
-    Map<String,ExerciseCategory> getSchedule(int no);
+    List<ScheduleDTO> getSchedule(int no);
 }
