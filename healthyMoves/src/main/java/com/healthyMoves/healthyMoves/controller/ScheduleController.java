@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
 @Slf4j
@@ -22,7 +22,7 @@ public class ScheduleController {
     private ScheduleService scheduleService;
 
     @GetMapping
-    public ResponseDTO<List<ExerciseCategory>> getSchedule(@RequestParam("no") int no) {
+    public ResponseDTO<Map<String,ExerciseCategory>> getSchedule(@RequestParam("no") int no) {
         log.info("request received for retreiving schedule");
         return new ResponseDTO<>(true, "Schedule fetched successfull", scheduleService.getSchedule(no));
     }

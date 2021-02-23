@@ -1,3 +1,4 @@
+/*
 package com.healthyMoves.healthyMoves.filter;
 
 import com.healthyMoves.healthyMoves.service.UserService;
@@ -47,3 +48,4 @@ public class AuthFilter implements Filter {
 
     }
 }
+*/
