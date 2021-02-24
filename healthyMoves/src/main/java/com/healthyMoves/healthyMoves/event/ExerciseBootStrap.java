@@ -36,6 +36,10 @@ public class ExerciseBootStrap {
         if (exerciseService.count() == 0) {
             List<Exercise> exercises = new ArrayList<>();
 
+            TimePeriod timePeriod = new TimePeriod();
+            timePeriod.setSets(3);
+            timePeriod.setReps(10);
+
 
             //Chest Exercise
             Exercise jumpingJacks = new Exercise();
@@ -45,11 +49,9 @@ public class ExerciseBootStrap {
                             , ExerciseCategory.SHOULDER_AND_BACK));
             jumpingJacks
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
-            TimePeriod timePeriod = new TimePeriod();
-            timePeriod.setReps(10);
-            timePeriod.setSets(3);
-            timePeriod.setTime(10);
-            jumpingJacks.setPeriod(timePeriod);
+            TimePeriod jumpingJacksTP = new TimePeriod();
+            jumpingJacksTP.setTime(10);
+            jumpingJacks.setPeriod(jumpingJacksTP);
             jumpingJacks.setLogoUrl(logoUrl + "/jumpingJack.jpg");
             jumpingJacks.setVideoUrl(videoUrl + "/Yoga.mp4");
             exercises.add(jumpingJacks);
@@ -60,6 +62,10 @@ public class ExerciseBootStrap {
             inclinePushUp
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             inclinePushUp.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod inclinePushUpTP = new TimePeriod();
+            inclinePushUpTP.setSets(3);
+            inclinePushUpTP.setReps(10);
+            inclinePushUp.setPeriod(inclinePushUpTP);
             exercises.add(inclinePushUp);
 
             Exercise kneePushUp = new Exercise();
@@ -68,6 +74,10 @@ public class ExerciseBootStrap {
             kneePushUp
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             kneePushUp.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod kneePushUpTP = new TimePeriod();
+            kneePushUpTP.setSets(3);
+            kneePushUpTP.setReps(10);
+            kneePushUp.setPeriod(kneePushUpTP);
             exercises.add(kneePushUp);
 
             Exercise pushUp = new Exercise();
@@ -75,6 +85,10 @@ public class ExerciseBootStrap {
             pushUp.setCategories(Arrays.asList(ExerciseCategory.CHEST, ExerciseCategory.ARMS));
             pushUp.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             pushUp.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod pushUpTP = new TimePeriod();
+            pushUpTP.setSets(3);
+            pushUpTP.setReps(10);
+            pushUp.setPeriod(pushUpTP);
             exercises.add(pushUp);
 
             Exercise wideArmPushUp = new Exercise();
@@ -83,6 +97,10 @@ public class ExerciseBootStrap {
             wideArmPushUp
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             wideArmPushUp.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod wideArmPushUpTP = new TimePeriod();
+            wideArmPushUpTP.setSets(3);
+            wideArmPushUpTP.setReps(10);
+            wideArmPushUp.setPeriod(wideArmPushUpTP);
             exercises.add(wideArmPushUp);
 
             Exercise cobraStretch = new Exercise();
@@ -91,6 +109,9 @@ public class ExerciseBootStrap {
             cobraStretch
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             cobraStretch.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod cobraStretchTP = new TimePeriod();
+            cobraStretchTP.setTime(30);
+            cobraStretch.setPeriod(cobraStretchTP);
             exercises.add(cobraStretch);
 
             Exercise chestStretch = new Exercise();
@@ -99,6 +120,9 @@ public class ExerciseBootStrap {
             chestStretch
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             chestStretch.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod chestStretchTP = new TimePeriod();
+            chestStretchTP.setTime(30);
+            chestStretch.setPeriod(chestStretchTP);
             exercises.add(chestStretch);
 
             Exercise tricepsDips = new Exercise();
@@ -108,6 +132,10 @@ public class ExerciseBootStrap {
             tricepsDips
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             tricepsDips.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod tricepsDipsTP = new TimePeriod();
+            tricepsDipsTP.setSets(3);
+            tricepsDipsTP.setReps(10);
+            tricepsDips.setPeriod(tricepsDipsTP);
             exercises.add(tricepsDips);
 
             //arms exercise
@@ -116,6 +144,10 @@ public class ExerciseBootStrap {
             armRaise.setCategories(Arrays.asList(ExerciseCategory.ARMS, ExerciseCategory.SHOULDER_AND_BACK));
             armRaise.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             armRaise.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod armRaiseTP = new TimePeriod();
+            armRaiseTP.setSets(3);
+            armRaiseTP.setReps(10);
+            armRaise.setPeriod(armRaiseTP);
             exercises.add(armRaise);
 
             Exercise sideArmRaise = new Exercise();
@@ -124,6 +156,10 @@ public class ExerciseBootStrap {
             sideArmRaise
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             sideArmRaise.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod sideArmRaiseTP = new TimePeriod();
+            sideArmRaiseTP.setSets(3);
+            sideArmRaiseTP.setReps(10);
+            sideArmRaise.setPeriod(sideArmRaiseTP);
             exercises.add(sideArmRaise);
 
             Exercise armCircleClockWise = new Exercise();
@@ -131,6 +167,10 @@ public class ExerciseBootStrap {
             armCircleClockWise.setCategories(Arrays.asList(ExerciseCategory.ARMS));
             armCircleClockWise
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
+            TimePeriod armCircleClockWiseTP = new TimePeriod();
+            armCircleClockWiseTP.setSets(3);
+            armCircleClockWiseTP.setReps(10);
+            armCircleClockWise.setPeriod(armCircleClockWiseTP);
             exercises.add(armCircleClockWise);
 
             Exercise armCircleCounterClockWise = new Exercise();
@@ -139,6 +179,10 @@ public class ExerciseBootStrap {
             armCircleCounterClockWise
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             armCircleClockWise.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod armCircleCounterClockWiseTp = new TimePeriod();
+            armCircleCounterClockWiseTp.setReps(10);
+            armCircleCounterClockWiseTp.setSets(3);
+            armCircleCounterClockWise.setPeriod(armCircleCounterClockWiseTp);
             exercises.add(armCircleCounterClockWise);
 
             Exercise diamondPushUp = new Exercise();
@@ -147,6 +191,7 @@ public class ExerciseBootStrap {
             diamondPushUp
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             diamondPushUp.setVideoUrl(videoUrl + "/Yoga.mp4");
+            diamondPushUp.setPeriod(timePeriod);
             exercises.add(diamondPushUp);
 
             Exercise punches = new Exercise();
@@ -154,6 +199,9 @@ public class ExerciseBootStrap {
             punches.setCategories(Arrays.asList(ExerciseCategory.ARMS));
             punches.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             punches.setVideoUrl(videoUrl + "/Yoga.mp4");
+            TimePeriod punchesTP = new TimePeriod();
+            punchesTP.setTime(30);
+            punches.setPeriod(punchesTP);
             exercises.add(punches);
 
             //legs
@@ -162,6 +210,7 @@ public class ExerciseBootStrap {
             squats.setCategories(Arrays.asList(ExerciseCategory.LEGS));
             squats.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             squats.setVideoUrl(videoUrl + "/Yoga.mp4");
+            squats.setPeriod(timePeriod);
             exercises.add(squats);
 
             Exercise sideHops = new Exercise();
@@ -169,6 +218,7 @@ public class ExerciseBootStrap {
             sideHops.setCategories(Arrays.asList(ExerciseCategory.LEGS));
             sideHops.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             sideHops.setVideoUrl(videoUrl + "/Yoga.mp4");
+            sideHops.setPeriod(timePeriod);
             exercises.add(sideHops);
 
             Exercise lunges = new Exercise();
@@ -176,6 +226,7 @@ public class ExerciseBootStrap {
             lunges.setCategories(Arrays.asList(ExerciseCategory.LEGS));
             lunges.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             lunges.setVideoUrl(videoUrl + "/Yoga.mp4");
+            lunges.setPeriod(timePeriod);
             exercises.add(lunges);
 
             Exercise calfRaise = new Exercise();
@@ -183,6 +234,7 @@ public class ExerciseBootStrap {
             calfRaise.setCategories(Arrays.asList(ExerciseCategory.LEGS));
             calfRaise.setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             calfRaise.setVideoUrl(videoUrl + "/Yoga.mp4");
+            calfRaise.setPeriod(timePeriod);
             exercises.add(calfRaise);
 
             Exercise calfStretchLeft = new Exercise();
@@ -191,6 +243,7 @@ public class ExerciseBootStrap {
             calfStretchLeft
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             calfStretchLeft.setVideoUrl(videoUrl + "/Yoga.mp4");
+            calfStretchLeft.setPeriod(timePeriod);
             exercises.add(calfStretchLeft);
 
             Exercise calfStretchRight = new Exercise();
@@ -199,6 +252,7 @@ public class ExerciseBootStrap {
             calfStretchRight
                     .setLevel(Arrays.asList(ExerciseLevel.BEGINNER, ExerciseLevel.EXPERT, ExerciseLevel.INTERMEDIATE));
             calfStretchRight.setVideoUrl(videoUrl + "/Yoga.mp4");
+            calfStretchRight.setPeriod(timePeriod);
             exercises.add(calfStretchRight);
             exerciseService.save(exercises);
         }
