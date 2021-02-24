@@ -28,6 +28,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(UserCO userCO) {
+        User existingUser = userRepository.findByEmail(userCO.getEmail());
+        if (existingUser != null) {
+            return existingUser;
+        }
         String token = UUID.randomUUID().toString();
         User user = new User();
         user.setEmail(userCO.getEmail());

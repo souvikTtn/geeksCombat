@@ -11,4 +11,6 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     @Query(value = "{deleted:false , active : true}", count = true)
     long count();
+
+    User findByEmail(String email);
 }
