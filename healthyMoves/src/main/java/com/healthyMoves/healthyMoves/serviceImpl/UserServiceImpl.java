@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setEmail(userCO.getEmail());
         user.setSocialId(userCO.getSocialId());
+        user.setProvider(userCO.getProvider());
         user.setToken(token);
         return userRepository.save(user);
 
